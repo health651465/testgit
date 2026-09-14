@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Expense Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #121212; color: #fff; }
+    .container { max-width: 600px; margin: auto; }
+    form { display: flex; gap: 10px; margin-bottom: 20px; }
+    input, select, button { padding: 8px; }
+    ul { list-style: none; padding: 0; }
+    li { background: #1e1e1e; padding: 10px; margin-bottom: 5px; display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Quản Lý Chi Tiêu</h2>
+    
+    <!-- Form nhập giao dịch -->
+    <form id="transaction-form">
+      <input type="text" id="desc" placeholder="Tên giao dịch" required />
+      <input type="number" id="amount" placeholder="Số tiền" required />
+      <select id="category">
+        <option value="Ăn uống">Ăn uống</option>
+        <option value="Muasắm">Mua sắm</option>
+        <option value="Di chuyển">Di chuyển</option>
+        <option value="Giải trí">Giải trí</option>
+      </select>
+      <button type="submit">Thêm</button>
+    </form>
+
+    <!-- Biểu đồ -->
+    <div style="width: 100%; max-width: 400px; margin: auto;">
+      <canvas id="expenseChart"></canvas>
+    </div>
+
+    <!-- Danh sách giao dịch -->
+    <h3>Lịch sử giao dịch</h3>
+    <ul id="transaction-list"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
